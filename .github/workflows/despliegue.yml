@@ -27,3 +27,9 @@ jobs:
 
     - name: Login en Github container registry
       run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Login en Github container registry
+      run: echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+    - name: Subir la imagen a GitHub Container Registry
+      run: docker push ghcr.io/bryanstevenliga/hello-steven:1.0.0
